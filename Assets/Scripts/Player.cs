@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         CreateRotation();
         if (Input.GetButtonDown("Jump"))
         {
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
     }
     public void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        rb.velocity = new Vector2(0, jumpPower);
         spriteControler.sprite = playerSpriteWingDown;
     }
     public void CreateRotation()
