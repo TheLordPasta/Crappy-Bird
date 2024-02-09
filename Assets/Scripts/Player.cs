@@ -7,7 +7,8 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour
 {
     bool v_jumped = true;
-    public float jumpPower;
+    private float jumpPower = 9;
+    [SerializeField] private float thrustAngle = 15;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Sprite playerSpriteWingDown;
     [SerializeField] private Sprite playerSpriteWingUp;
@@ -39,9 +40,9 @@ public class Player : MonoBehaviour
     }
     public void CreateRotation()
     {
-        if (rb.velocity.y > -jumpPower / 2)
-            transform.eulerAngles = new Vector3(0, 0, 90 * Mathf.Sin(90 / jumpPower * rb.velocity.y));
-        //else
-        //    transform.eulerAngles = new Vector3(0, 0,-45);
+        if (rb.velocity.y > -jumpPower)
+            transform.eulerAngles = new Vector3(0, 0, (rb.velocity.y / jumpPower) * thrustAngle);
+        else
+            transform.eulerAngles = new Vector3(0, 0,-thrustAngle);
     }
 }

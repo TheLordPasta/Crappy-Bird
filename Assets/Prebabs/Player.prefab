@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 9
+  thrustAngle: 20
   rb: {fileID: 746688565267740713}
   playerSpriteWingDown: {fileID: 112547809, guid: 7546907c64df2b645b15d86fe80f7b0d, type: 3}
   playerSpriteWingUp: {fileID: 1475494417, guid: 7546907c64df2b645b15d86fe80f7b0d, type: 3}
