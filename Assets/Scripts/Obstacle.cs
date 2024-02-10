@@ -16,6 +16,16 @@ public class Obstacle : MonoBehaviour
     void Update()
     {
         //transform.Translate(-0.2f, 0, 0);
+        if (transform.position.x < -15)
+        {
+            FreeObstacle();
+        }
+
         rb.velocity = new Vector2(-speed, 0);
+    }
+
+    void FreeObstacle()
+    {
+        Destroy(this.gameObject);
     }
 }
